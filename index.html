@@ -2,78 +2,205 @@
 <html lang="en">
 
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
+        rel="stylesheet">
     <style>
-        body{
-            border: 35px solid transparent;
+        header {
+            position: sticky;
+            top: 0;
+            width: 1500px;
+            height: 150px;
+            background-color: white;
+            z-index: 1000;
+            padding-right: 0;
+            /*no se*/
         }
 
+        body {
+            position: relative;
+            padding-top: 200px;
+            border-left: 60px solid transparent;
+            border-right: 20px solid transparent;
+        }
+
+        ::selection {
+            background-color: #6E660A;
+        }
+
+        img {
+            transition: transform 1s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        /*class="hoverable"*/
+
+        .links a {
+            text-decoration: none;
+        }
+
+        ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .links {
+            position: relative;
+            top: 20px;
+            left: 1400px;
+        }
+
+        article::before {
+            content: "";
+            display: block;
+            width: 300px;
+            height: 2px;
+            background-color: inherit;
+            /*como hago que varíe según el artículo?*/
+        }
+
+        article {
+            padding: 10px;
+            position: relative;
+            /*background-color: yellow;
+            border: 1px solid black;*/
+            height: 500px;
+        }
+
+        article img {
+            position: absolute;
+            right: 50px;
+            top: 70px;
+            width: 400px;
+        }
+
+        main {
+            margin-bottom: 200px;
+        }
+        
+
+
+        button,
         input[type="button"] {
             background-color: transparent;
-        }
-        h1 {
-            font-family: "Source Serif 4", serif;/*no existe*/
-            font-weight: 100;
+            transition: transform 0.2s ease, text 0.5s ease;
+            padding: 10px;
         }
 
-        .links, h4, input[type="button"] {
+        button:hover,
+        input[type="button"]:hover {
+            transform: scale(1.05);
+            /*el texto hace cosas raras, el botón bien*/
+        }
+
+        h1,
+        h3 {
+            font-family: "Source Serif 4", serif;
+            font-weight: 300;
+        }
+
+        h1 {
+            font-size: 60px;
+        }
+
+        h3 {
+            font-family: "Source Serif 4", serif;
+            font-weight: 600;
+            font-size: 25px;
+        }
+
+        .links,
+        h4,
+        button,
+        input[type="button"] {
             font-family: "Source Code Pro", monospace;
-            font-size: 10px;
+            font-size: 15px;
+        }
+
+        header {
+            position: relative;
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+        }
+
+        header section h3 {
+            position: absolute;
+            left: 65px;
+            top: 0px;
+        }
+
+        header section img {
+            position: absolute;
+            left: 0px;
+            top: 20px;
         }
     </style>
 </head>
 
-<body>
+<body style="margin: 0; padding: 0;">
     <header>
         <section>
             <img src="assets/sarah-chen.png" alt="Sarah Chen" width="50 px">
             <h3>Sarah Chen</h3>
         </section>
         <nav>
-            <ul class="links"><!--quitar los puntos de la lista-->
+            <ul class="links">
                 <li><a href="index.html" style="color: fuchsia;">Home</a></li>
-                <li><a href="about.html" style = "color: khaki;">About</a></li>
-                <li><a href=""style = "color: purple;">Contact</a></li>
+                <li><a href="about.html" style="color: #6E660A; ">About</a></li>
+                <li><a href="" style="color: purple; ">Contact</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h1>I'm Sarah Chen, design student and explorer of visual languages. I'm passionate about understanding how
+        <h1 style="margin: 100px;">I'm Sarah Chen, design student and explorer of visual languages. I'm passionate about understanding how
             different design disciplines intersect and create meaningful connections.</h1>
-        <section >
-            <article style="width: 300px; color: blue; text-align: left;">
-                <hr style="color: blue;"><!--no se pinta-->
+        <section style="color: blue;">
+            <article style="color: blue; border-top: 2px solid blue;">
+                
+                <br>
                 <h4><ins>Design</ins></h4>
                 <h1>Yoga studio rebrand</h1>
-                <h4><input type="button" value="Explore"style="color: inherit; border: 1px solid blue;"></h4>
-                <img src="assets/yoga.png" alt="Yoga studio rebrand" width="200 px">
+                <h4><button value="Explore" style="color: inherit; border-color: blue;">Explore</button></h4>
+                <img src="assets/yoga.png" alt="Yoga studio rebrand">
             </article>
-            <article style="width: 300px; color: fuchsia; text-align: right;"><!--no del todo a la derecha-->
-                <hr>
+            <article style="color: fuchsia; border-top: 2px solid fuchsia;"><!--no del todo a la derecha-->
+                <br>
                 <h4><ins>Artwork</ins></h4>
                 <h1>Abstract paintings</h1>
-                <h4><input type="button" value="Explore"style="color: inherit; border: 1px solid fuchsia;"></h4>
-                <img src="assets/abstract.png" alt="Abstract paintings" width="200 px">
+                <h4><input type="button" value="Explore" style="color: inherit; border: 1px solid fuchsia;"></h4>
+                <img src="assets/abstract.png" alt="Abstract paintings">
             </article>
-            <article style="width: 300px; color: khaki;">
-                <hr>
+            <article style="color: #6E660A; border-top: 2px solid #6E660A;">
+                <br>
                 <h4><ins>Design</ins></h4>
                 <h1>Magazine study</h1>
-                <h4><input type="button" value="Explore"style="color: inherit; border: 1px solid khaki;"></h4>
-                <img src="assets/magazine.png" alt="Magazine study" width="200 px">
+                <h4><input type="button" value="Explore" style="color: inherit; border: 1px solid #6E660A;"></h4>
+                <img src="assets/magazine.png" alt="Magazine study">
             </article>
-            <article style="width: 300px; color: purple;">
-                <hr>
+            <article style=" color: purple; border-top: 2px solid purple;">
+                
+                <br>
                 <h4><ins>Photography</ins></h4>
                 <h1>Echoes of Italy</h1>
-                <h4><input type="button" value="Explore"style="color: inherit; border: 1px solid purple;"></h4>
-                <img src="assets/echoes.png" alt="Echoes of Italy" width="200 px">
+                <h4><input type="button" value="Explore" style="color: inherit; border: 1px solid purple;"></h4>
+                <img src="assets/echoes.png" alt="Echoes of Italy">
             </article>
-            <article style="width: 300px; color: darkblue;">
-                <hr>
+            <article style="color: darkblue;  border-top: 2px solid darkblue;">
+                
                 <h4><ins>Design</ins></h4>
                 <h1>Castro Capital branding</h1>
-                <h4><input type="button" value="Explore"style="color: inherit; border: 1px solid darkblue;"></h4>
-                <img src="assets/castro.png" alt="Castro Capital branding" width="200 px">
+                <h4><input type="button" value="Explore" style="color: inherit; border: 1px solid darkblue;"></h4>
+                <img src="assets/castro.png" alt="Castro Capital branding">
             </article>
 
         </section>
@@ -87,15 +214,20 @@
     </main>
 
     <footer>
-        <hr>
-        <ul>
-            <h1>
-                <li><a href="mail@example.com"style="color: fuchsia;">Email</a></li>
-                <li><a href="behance@example.com"style="color: purple;">Behance</a></li>
-                <li><a href="linkedin@example.com"style="color: darkblue;">LinkedIn</a></li>
-            </h1>
+        
+        <h1 style="border-top: 2px solid black;">
+        <ul style="justify-content: center;
+            gap: 500px; ">
+            
+                <li><a href="mail@example.com" style="color: fuchsia;">Email</a></li>
+                <li><a href="behance@example.com" style="color: purple;">Behance</a></li>
+                <li><a href="linkedin@example.com" style="color: darkblue;">LinkedIn</a></li>
+            
         </ul>
-        <h1>©Sarah Chen 2025 All Rights Reserved</h1>
+        <br>
+        <br>
+        </h1>
+        <h1>&#169 Sarah Chen 2025 All Rights Reserved</h1>
     </footer>
 </body>
 
