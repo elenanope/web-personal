@@ -2,43 +2,158 @@
 <html lang="en">
 
 <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarah Chen</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
         rel="stylesheet">
     <style>
+        @media (min-width: 768px) {
+            /*mejorar medidas*/
+
+            /*aqui irá las imágenes de cada articulo en row, para móvil en columna
+            lo mismo con el nav y poner la foto bajo del nombre
+            por último la lista de links del final*/
+
+            /*IMPORTANTE EN GENERAL
+            cambiar fuentes de px a rem para correcta escalabilidad y comprobar el resto de medidas de la web
+            decidir si cambiar algún h1,2 o 3*/
+        }
+
+        :root {
+            --font-main: "Source Serif 4", serif;
+            --font-secondary: "Source Code Pro", monospace;
+
+            --color-blue: #0034AD;
+            --color-pink: #AB0782;
+            --color-khaki: #6E660A;
+            --color-purple: #5F00AD;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         header {
-            position: sticky;
+            background: linear-gradient(to bottom,
+                    rgba(255, 255, 255, 0.65),
+                    rgba(255, 255, 255, 0));
+            position: fixed;
             top: 0;
-            width: 1500px;
-            height: 150px;
-            background-color: white;
+            left: 60px;
+            right: 60px;
+            height: 10vh;
             z-index: 1000;
-            padding-right: 0;
-            /*no se*/
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        body {
-            position: relative;
-            padding-top: 200px;
-            border-left: 60px solid transparent;
-            border-right: 20px solid transparent;
+        .profile {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 2rem;
         }
 
-        ::selection {
-            background-color: #6E660A;
+        .profile__image-container {
+            transform-origin: 50% 40%;
+            animation: rotar linear;
+            animation-timeline: scroll();
+
         }
 
-        img {
+        @keyframes rotar {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .profile__image {
+            transition: transform 0.2s cubic-bezier(0.34, 2, 0.64, 1); /* efecto muelle/rebote */
+        }
+
+        .profile__image:hover {
+            transform: rotate(-30deg);
+        }
+
+        .container {
+            margin: 60px;
+            margin-top: 150px;
+        }
+
+        main {
+            margin-bottom: 120px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1,
+        h3 {
+            font-family: var(--font-main);
+        }
+
+        .links,
+        h4,
+        button,
+        input[type="button"] {
+            font-family: var(--font-secondary);
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 103%;
+            letter-spacing: -0.045em;
+        }
+
+        h1 {
+            font-style: normal;
+            font-weight: 300;
+            font-size: 50px;
+            line-height: 120%;
+            letter-spacing: -0.045em;
+            margin: 20px 0;
+        }
+
+        .presentation-text {
+            margin-bottom: 30px;
+        }
+
+        .skills-statement {
+            margin-bottom: 60px;
+        }
+
+        .social-links {
+            justify-content: space-between;
+            margin: 20px 0 150px 0;
+        }
+
+        h3 {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 152%;
+            letter-spacing: -0.045em;
+        }
+
+        .item__image {
             transition: transform 1s ease;
         }
 
-        img:hover {
+        .item__image:hover {
             transform: scale(1.05);
         }
-
-        /*class="hoverable"*/
 
         .links a {
             text-decoration: none;
@@ -48,50 +163,39 @@
             display: flex;
             gap: 20px;
             list-style: none;
-            padding: 0;
-        }
-
-        .links {
-            position: relative;
-            top: 20px;
-            left: 1400px;
-        }
-
-        article::before {
-            content: "";
-            display: block;
-            width: 300px;
-            height: 2px;
-            background-color: inherit;
-            /*como hago que varíe según el artículo?*/
         }
 
         article {
             padding: 10px;
             position: relative;
-            /*background-color: yellow;
-            border: 1px solid black;*/
-            height: 500px;
+            height: 670px;
         }
 
-        article img {
-            position: absolute;
-            right: 50px;
-            top: 70px;
-            width: 400px;
+        .projects {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            flex-wrap: wrap;
         }
 
-        main {
-            margin-bottom: 200px;
+        .projects__item {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-top: 60px;
         }
-        
 
+        .item__image {
+            width: 565px;
+            height: 565px;
+            border-radius: 8px;
+        }
 
         button,
         input[type="button"] {
             background-color: transparent;
             transition: transform 0.2s ease, text 0.5s ease;
-            padding: 10px;
+            padding: 5px 10px;
         }
 
         button:hover,
@@ -99,136 +203,106 @@
             transform: scale(1.05);
             /*el texto hace cosas raras, el botón bien*/
         }
-
-        h1,
-        h3 {
-            font-family: "Source Serif 4", serif;
-            font-weight: 300;
-        }
-
-        h1 {
-            font-size: 60px;
-        }
-
-        h3 {
-            font-family: "Source Serif 4", serif;
-            font-weight: 600;
-            font-size: 25px;
-        }
-
-        .links,
-        h4,
-        button,
-        input[type="button"] {
-            font-family: "Source Code Pro", monospace;
-            font-size: 15px;
-        }
-
-        header {
-            position: relative;
-        }
-
-        nav {
-            position: absolute;
-            top: 0;
-        }
-
-        header section h3 {
-            position: absolute;
-            left: 65px;
-            top: 0px;
-        }
-
-        header section img {
-            position: absolute;
-            left: 0px;
-            top: 20px;
-        }
     </style>
 </head>
 
-<body style="margin: 0; padding: 0;">
-    <header>
-        <section>
-            <img src="assets/sarah-chen.png" alt="Sarah Chen" width="50 px">
-            <h3>Sarah Chen</h3>
-        </section>
-        <nav>
-            <ul class="links">
-                <li><a href="index.html" style="color: fuchsia;">Home</a></li>
-                <li><a href="about.html" style="color: #6E660A; ">About</a></li>
-                <li><a href="" style="color: purple; ">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1 style="margin: 100px;">I'm Sarah Chen, design student and explorer of visual languages. I'm passionate about understanding how
-            different design disciplines intersect and create meaningful connections.</h1>
-        <section style="color: blue;">
-            <article style="color: blue; border-top: 2px solid blue;">
-                
-                <br>
-                <h4><ins>Design</ins></h4>
-                <h1>Yoga studio rebrand</h1>
-                <h4><button value="Explore" style="color: inherit; border-color: blue;">Explore</button></h4>
-                <img src="assets/yoga.png" alt="Yoga studio rebrand">
-            </article>
-            <article style="color: fuchsia; border-top: 2px solid fuchsia;"><!--no del todo a la derecha-->
-                <br>
-                <h4><ins>Artwork</ins></h4>
-                <h1>Abstract paintings</h1>
-                <h4><input type="button" value="Explore" style="color: inherit; border: 1px solid fuchsia;"></h4>
-                <img src="assets/abstract.png" alt="Abstract paintings">
-            </article>
-            <article style="color: #6E660A; border-top: 2px solid #6E660A;">
-                <br>
-                <h4><ins>Design</ins></h4>
-                <h1>Magazine study</h1>
-                <h4><input type="button" value="Explore" style="color: inherit; border: 1px solid #6E660A;"></h4>
-                <img src="assets/magazine.png" alt="Magazine study">
-            </article>
-            <article style=" color: purple; border-top: 2px solid purple;">
-                
-                <br>
-                <h4><ins>Photography</ins></h4>
-                <h1>Echoes of Italy</h1>
-                <h4><input type="button" value="Explore" style="color: inherit; border: 1px solid purple;"></h4>
-                <img src="assets/echoes.png" alt="Echoes of Italy">
-            </article>
-            <article style="color: darkblue;  border-top: 2px solid darkblue;">
-                
-                <h4><ins>Design</ins></h4>
-                <h1>Castro Capital branding</h1>
-                <h4><input type="button" value="Explore" style="color: inherit; border: 1px solid darkblue;"></h4>
-                <img src="assets/castro.png" alt="Castro Capital branding">
-            </article>
+<body>
+    <div class="container">
+        <header>
+            <section class="profile">
+                <div class="profile__image-container">
+                    <img class="profile__image" src="assets/sarah-chen.png" alt="Sarah Chen" width="50 px"
+                        height="50px">
+                </div>
+                <h3>Sarah Chen</h3>
+            </section>
+            <nav>
+                <ul class="links">
+                    <li><a href="index.html" style="color: var(--color-pink);">Home</a></li>
+                    <li><a href="about.html" style="color: var(--color-khaki); ">About</a></li>
+                    <li><a href="" style="color: var(--color-purple); ">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1 class="presentation-text">I'm Sarah Chen, design student and explorer of visual languages. I'm
+                passionate about understanding how
+                different design disciplines intersect and create meaningful connections.</h1>
+            <section class="projects" style="color:var(--color-blue);">
+                <article class="projects__item"
+                    style="color: var(--color-blue); border-top: 1px solid var(--color-blue);">
 
-        </section>
-        <section>
+                    <div class="item__text">
+                        <h4><ins>Design</ins></h4>
+                        <h1>Yoga studio rebrand</h1>
+                        <h4><button value="Explore"
+                                style="color: inherit; border-color: var(--color-blue);">Explore</button></h4>
+                    </div>
+                    <img class="item__image" src="assets/yoga.png" alt="Yoga studio rebrand">
+                </article>
+                <article class="projects__item"
+                    style="color: var(--color-pink); border-top: 1px solid var(--color-pink);">
+                    <div class="item__text">
+                        <h4><ins>Artwork</ins></h4>
+                        <h1>Abstract paintings</h1>
+                        <h4><input type="button" value="Explore"
+                                style="color: inherit; border: 1px solid var(--color-pink);">
+                        </h4>
+                    </div>
+                    <img class="item__image" src="assets/abstract.png" alt="Abstract paintings">
+                </article>
+                <article class="projects__item"
+                    style="color: var(--color-khaki); border-top: 1px solid var(--color-khaki);">
+                    <div class="item__text">
+                        <h4><ins>Design</ins></h4>
+                        <h1>Magazine study</h1>
+                        <h4><input type="button" value="Explore"
+                                style="color: inherit; border: 1px solid var(--color-khaki);">
+                        </h4>
+                    </div>
+                    <img class="item__image" src="assets/magazine.png" alt="Magazine study">
+                </article>
+                <article class="projects__item"
+                    style=" color: var(--color-purple); border-top: 1px solid var(--color-purple);">
+                    <div class="item__text">
+                        <h4><ins>Photography</ins></h4>
+                        <h1>Echoes of Italy</h1>
+                        <h4><input type="button" value="Explore"
+                                style="color: inherit; border: 1px solid var(--color-purple);"></h4>
+                    </div>
+                    <img class="item__image" src="assets/echoes.png" alt="Echoes of Italy">
+                </article>
+                <article class="projects__item"
+                    style="color: var(--color-blue);  border-top: 1px solid var(--color-blue);">
+                    <div class="item__text">
+                        <h4><ins>Design</ins></h4>
+                        <h1>Castro Capital branding</h1>
+                        <h4><input type="button" value="Explore"
+                                style="color: inherit; border: 1px solid var(--color-blue);">
+                        </h4>
+                    </div>
+                    <img class="item__image" src="assets/castro.png" alt="Castro Capital branding">
+                </article>
+            </section>
+            <section>
+                <h1 class="skills-statement">I'm dedicated to crafting meaningful visual experiences through a
+                    multidisciplinary design approach.
+                </h1>
+                <h4><input type="button" value="Discover my skills and passions"></h4>
+            </section>
+        </main>
 
-            <h1>I'm dedicated to crafting meaningful visual experiences through a multidisciplinary design approach.
+        <footer>
+            <h1 style="border-top: 1px solid black;">
+                <ul class="social-links">
+                    <li><a href="mail@example.com" style="color: var(--color-pink);">Email</a></li>
+                    <li><a href="behance@example.com" style="color: var(--color-purple);">Behance</a></li>
+                    <li><a href="linkedin@example.com" style="color: var(--color-blue);">LinkedIn</a></li>
+                </ul>
             </h1>
-
-            <h4><input type="button" value="Discover my skills and passions"></h4>
-        </section>
-    </main>
-
-    <footer>
-        
-        <h1 style="border-top: 2px solid black;">
-        <ul style="justify-content: center;
-            gap: 500px; ">
-            
-                <li><a href="mail@example.com" style="color: fuchsia;">Email</a></li>
-                <li><a href="behance@example.com" style="color: purple;">Behance</a></li>
-                <li><a href="linkedin@example.com" style="color: darkblue;">LinkedIn</a></li>
-            
-        </ul>
-        <br>
-        <br>
-        </h1>
-        <h1>&#169 Sarah Chen 2025 All Rights Reserved</h1>
-    </footer>
+            <h1>&#169 Sarah Chen 2025 All Rights Reserved</h1>
+        </footer>
+    </div>
 </body>
 
 </html>
