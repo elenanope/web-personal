@@ -2,125 +2,209 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="./css/style.css">
     <style>
-        h1 {
-            font-family: "Source Serif Pro", serif;/*no existe*/
-            font-weight: 100;
+        /*ver que se puede optimizar y poner los espaciados bien*/
+        .linked-text {
+            color: rgb(56, 47, 47);
+            line-height: 8rem;
         }
 
-        .links, h4, input[type="button"] {
-            font-family: "Source Code Pro", monospace;
-            font-size: 10px;
+        .skills-statement {
+            margin-top: 2rem;
+            margin-bottom: 0;
         }
 
-        .articles-grid
-        {
+        .item__text {
+            padding: 3rem 0;
+            max-width: 20rem;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .articles-grid {
             display: flex;
-            gap: 200px;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .status {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            justify-content: space-between;
+            padding-bottom: 4rem;
+            padding-top: 4rem;
+        }
+
+        .status__description {
+            border-top: 1px solid black;
+            line-height: 5rem;
+            width: 100%;
+        }
+
+        .article__item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item__image--smaller {
+
+            align-self: center;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            padding-top: 50px;
+
+            transition: 1s ease;
+        }
+
+        .item__image--smaller:hover {
+            transform: scale(1.02);
+            opacity: 0.7;
+        }
+
+
+        @media(min-width: 768px) {
+
+            .item__image--smaller{
+                
+            width:361.33px;
+            }
+            .article__item {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+        }
+
+        @media (min-width: 1200px) {
+            .articles-grid {
+                flex-direction: row;
+            }
+
+            .article__item {
+                flex-direction: column;
+            }
+
+            .status {
+                flex-direction: row;
+            }
+
+            .status__description {
+                width: 557.33px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <section>
-            <img src="assets/sarah-chen.png" alt="Sarah Chen" width="50 px">
-            <h3>Sarah Chen</h3>
-        </section>
-        <nav>
-            <ul class="links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li>Contact</li>
+    <div class="container">
+        <header>
+            <section class="profile">
+                <div class="profile__image-container">
+                    <img class="profile__image" src="assets/images/sarah-chen.png" alt="Sarah Chen" width="50px" height="50px">
+                </div>
+                <h1 class="profile__name">Sarah Chen</h1>
+            </section>
+            <nav>
+                <ul class="links">
+                    <li><a href="index.html" class="pink-text">Home</a></li>
+                    <li><a href="about.html" class="khaki-text">About</a></li>
+                    <li><a href="mailto:mail@example.com" class="purple-text">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1 class="presentation-text">
+                <p>During my time at Aetheria School of Visual Arts, I had the opportunity to intern at Lumina Creative
+                    Studio
+                    and The Terraform Interiors Collective. These experiences allowed me to see design in action,
+                    collaborating
+                    with talented professionals and contributing to real-world projects. I learned invaluable lessons
+                    about the
+                    creative process, from concept development to final execution.</p>
+                <br>
+                <p>I thrive in collaborative environments, where ideas can bounce and evolve. I love the challenge of
+                    taking a
+                    concept and translating it into a compelling visual experience. Whether I'm sketching,
+                    photographing, or
+                    designing, I'm always searching for ways to connect with people on a deeper level through my work.
+                </p>
+            </h1>
+            <section class="status">
+
+                <article>
+                    <div class="status__description">
+                        Right now I am...
+                    </div>
+                </article>
+
+                <article>
+                    <div class="status__description">
+                        asdf to: Relationships by Haim
+                    </div>
+                    <div class="status__description">
+                        Dreaming of: Gohar World's dinner parties
+                    </div>
+                    <div class="status__description">
+                        Eating at: Mcdonald's
+                    </div>
+                    <div class="status__description">
+                        Training for: The NYC Marathon
+                    </div>
+                    <img src="assets/images/about.png" alt="Yellow Photo" width="1565">
+                </article>
+
+            </section>
+            <section class="top-line">
+                <h1 class="skills-statement">
+                    From graphic design to interior spaces, see the breadth of my creative explorations.
+                </h1>
+                <a class="linked-text" href="projects.html">More projects</a>
+            </section>
+            <section class="articles-grid">
+                <article class="article__item top-line pink-text">
+                    <div class="item__text">
+                        <h2 class="item__category">Artwork</h2>
+                        <h1 class="item__title">Illustration sketches</h1>
+                        <input class="pink-text" type="button" value="Explore">
+                    </div>
+                    <img class="item__image--smaller" src="assets/images/abstract.png" alt="Abstract paintings">
+                </article>
+                <article class="article__item top-line khaki-text">
+                    <div class="item__text">
+                        <h2 class="item__category">Design</h2>
+                        <h1 class="item__title">Magazine study</h1>
+                        <input class="khaki-text" type="button" value="Explore">
+                    </div>
+                    <img class="item__image--smaller" src="assets/images/magazine.png" alt="Magazine study">
+                </article>
+                <article class="article__item top-line blue-text">
+                    <div class="item__text">
+                        <h2 class="item__category">Design</h2>
+                        <h1 class="item__title">Castro Capital branding</h1>
+                        <input class="blue-text" type="button" value="Explore">
+                    </div>
+                    <img class="item__image--smaller" src="assets/images/castro.png" alt="Castro Capital branding">
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            <div class="top-line">
+            <ul class="social-links">
+                <li><a class="pink-text" href="mailto:mail@example.com">Email</a></li>
+                <li><a class="purple-text" href="https://www.behance.net">Behance</a></li>
+                <li><a class="blue-text" href="https://www.linkedin.com">LinkedIn</a></li>
             </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>During my time at Aetheria School of Visual Arts, I had the opportunity to intern at Lumina Creative Studio
-            and The Terraform Interiors Collective. These experiences allowed me to see design in action, collaborating
-            with talented professionals and contributing to real-world projects. I learned invaluable lessons about the
-            creative process, from concept development to final execution.
-            
-            <p>I thrive in collaborative environments, where ideas can bounce and evolve. I love the challenge of taking a
-            concept and translating it into a compelling visual experience. Whether I'm sketching, photographing, or
-            designing, I'm always searching for ways to connect with people on a deeper level through my work.
-        </p>
-        </h1>
-        <section>
-
-            <article>
-                <hr>
-                <h4>
-                    Right now I am...
-                </h4>
-            </article>
-
-            <article>
-                <hr>
-                <h4>
-                    asdf to: Relationships by Haim
-                </h4>
-                <hr>
-                <h4>
-                    Dreaming of: Gohar World's dinner parties
-                </h4>
-                <hr>
-                <h4>
-                    Eating at: Mcdonald's
-                </h4>
-                <hr>
-                <h4>
-                    Training for: The NYC Marathon
-                </h4>
-                <img src="assets/about.png" alt="Yellow Photo" width="300 px">
-            </article>
-
-        </section>
-        <section>
-            <hr>
-            <h1>
-                From graphic design to interior spaces, see the breadth of my creative explorations.
-            </h1>
-            <h4>
-                <a href="projects.html">More projects</a>
-            </h4>
-        </section>
-        <section class="articles-grid">
-            <article>
-                <hr>
-                <h4><ins>Artwork</ins></h4>
-                <h1>Illustration sketches</h1>
-                <h4><input type="button" value="Explore"></h4>
-                <img src="assets/abstract.png" alt="Abstract paintings" width="200 px">
-            </article>
-            <article>
-                <hr>
-                <h4><ins>Design</ins></h4>
-                <h1>Magazine study</h1>
-                <h4><input type="button" value="Explore"></h4>
-                <img src="assets/magazine.png" alt="Magazine study" width="200 px">
-            </article>
-            <article>
-                <hr>
-                <h4><ins>Design</ins></h4>
-                <h1>Castro Capital branding</h1>
-                <h4><input type="button" value="Explore"></h4>
-                <img src="assets/castro.png" alt="Castro Capital branding" width="200 px">
-            </article>
-        </section>
-    </main>
-
-    <footer>
-        <hr>
-        <ul>
-            <h1>
-                <li><a href="mail@example.com">Email</a></li>
-                <li><a href="behance@example.com">Behance</a></li>
-                <li><a href="linkedin@example.com">LinkedIn</a></li>
-            </h1>
-        </ul>
-        <h1>©Sarah Chen 2025 All Rights Reserved</h1>
-    </footer>
+            </div>
+            <h1 class="footer-copyright">&#169 Sarah Chen 2025 All Rights Reserved</h1>
+        </footer>
+    </div>
 </body>
 
 </html>

@@ -6,204 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sarah Chen</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
-        rel="stylesheet">
-    <style>
-        @media (min-width: 768px) {
-            /*mejorar medidas*/
+    <link rel="stylesheet" href="./css/style.css">
 
-            /*aqui irá las imágenes de cada articulo en row, para móvil en columna
-            lo mismo con el nav y poner la foto bajo del nombre
-            por último la lista de links del final*/
-
-            /*IMPORTANTE EN GENERAL
-            cambiar fuentes de px a rem para correcta escalabilidad y comprobar el resto de medidas de la web
-            decidir si cambiar algún h1,2 o 3*/
-        }
-
-        :root {
-            --font-main: "Source Serif 4", serif;
-            --font-secondary: "Source Code Pro", monospace;
-
-            --color-blue: #0034AD;
-            --color-pink: #AB0782;
-            --color-khaki: #6E660A;
-            --color-purple: #5F00AD;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        header {
-            background: linear-gradient(to bottom,
-                    rgba(255, 255, 255, 0.65),
-                    rgba(255, 255, 255, 0));
-            position: fixed;
-            top: 0;
-            left: 60px;
-            right: 60px;
-            height: 10vh;
-            z-index: 1000;
-
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .profile {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .profile__image-container {
-            transform-origin: 50% 40%;
-            animation: rotar linear;
-            animation-timeline: scroll();
-
-        }
-
-        @keyframes rotar {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        .profile__image {
-            transition: transform 0.2s cubic-bezier(0.34, 2, 0.64, 1); /* efecto muelle/rebote */
-        }
-
-        .profile__image:hover {
-            transform: rotate(-30deg);
-        }
-
-        .container {
-            margin: 60px;
-            margin-top: 150px;
-        }
-
-        main {
-            margin-bottom: 120px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        h1,
-        h3 {
-            font-family: var(--font-main);
-        }
-
-        .links,
-        h4,
-        button,
-        input[type="button"] {
-            font-family: var(--font-secondary);
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 103%;
-            letter-spacing: -0.045em;
-        }
-
-        h1 {
-            font-style: normal;
-            font-weight: 300;
-            font-size: 50px;
-            line-height: 120%;
-            letter-spacing: -0.045em;
-            margin: 20px 0;
-        }
-
-        .presentation-text {
-            margin-bottom: 30px;
-        }
-
-        .skills-statement {
-            margin-bottom: 60px;
-        }
-
-        .social-links {
-            justify-content: space-between;
-            margin: 20px 0 150px 0;
-        }
-
-        h3 {
-            font-style: normal;
-            font-weight: 400;
-            font-size: 24px;
-            line-height: 152%;
-            letter-spacing: -0.045em;
-        }
-
-        .item__image {
-            transition: transform 1s ease;
-        }
-
-        .item__image:hover {
-            transform: scale(1.05);
-        }
-
-        .links a {
-            text-decoration: none;
-        }
-
-        ul {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-        }
-
-        article {
-            padding: 10px;
-            position: relative;
-            height: 670px;
-        }
-
-        .projects {
-            display: flex;
-            flex-direction: column;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
-
-        .projects__item {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            padding-top: 60px;
-        }
-
-        .item__image {
-            width: 565px;
-            height: 565px;
-            border-radius: 8px;
-        }
-
-        button,
-        input[type="button"] {
-            background-color: transparent;
-            transition: transform 0.2s ease, text 0.5s ease;
-            padding: 5px 10px;
-        }
-
-        button:hover,
-        input[type="button"]:hover {
-            transform: scale(1.05);
-            /*el texto hace cosas raras, el botón bien*/
-        }
-    </style>
 </head>
 
 <body>
@@ -211,16 +15,15 @@
         <header>
             <section class="profile">
                 <div class="profile__image-container">
-                    <img class="profile__image" src="assets/sarah-chen.png" alt="Sarah Chen" width="50 px"
-                        height="50px">
+                    <img class="profile__image" src="assets/images/sarah-chen.png" alt="Sarah Chen" width="50px" height="50px">
                 </div>
-                <h3>Sarah Chen</h3>
+                <h1 class="profile__name">Sarah Chen</h1>
             </section>
             <nav>
                 <ul class="links">
-                    <li><a href="index.html" style="color: var(--color-pink);">Home</a></li>
-                    <li><a href="about.html" style="color: var(--color-khaki); ">About</a></li>
-                    <li><a href="" style="color: var(--color-purple); ">Contact</a></li>
+                    <li><a href="index.html" class="pink-text">Home</a></li>
+                    <li><a href="about.html" class="khaki-text">About</a></li>
+                    <li><a href="mailto:mail@example.com" class="purple-text">Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -228,79 +31,66 @@
             <h1 class="presentation-text">I'm Sarah Chen, design student and explorer of visual languages. I'm
                 passionate about understanding how
                 different design disciplines intersect and create meaningful connections.</h1>
-            <section class="projects" style="color:var(--color-blue);">
-                <article class="projects__item"
-                    style="color: var(--color-blue); border-top: 1px solid var(--color-blue);">
+            <section class="projects blue-text">
+                <article class="projects__item top-line blue-text">
 
                     <div class="item__text">
-                        <h4><ins>Design</ins></h4>
-                        <h1>Yoga studio rebrand</h1>
-                        <h4><button value="Explore"
-                                style="color: inherit; border-color: var(--color-blue);">Explore</button></h4>
+                        <h2 class="item__category">Design</h2>
+                        <h1 class="item__title">Yoga studio rebrand</h1>
+                        <p><button class="blue-text" value="Explore">Explore</button></p>
                     </div>
-                    <img class="item__image" src="assets/yoga.png" alt="Yoga studio rebrand">
+                    <img class="item__image" src="assets/images/yoga.png" alt="Yoga studio rebrand">
                 </article>
-                <article class="projects__item"
-                    style="color: var(--color-pink); border-top: 1px solid var(--color-pink);">
+                <article class="projects__item top-line pink-text">
                     <div class="item__text">
-                        <h4><ins>Artwork</ins></h4>
-                        <h1>Abstract paintings</h1>
-                        <h4><input type="button" value="Explore"
-                                style="color: inherit; border: 1px solid var(--color-pink);">
-                        </h4>
+                        <h2 class="item__category">Artwork</h2>
+                        <h1 class="item__title">Abstract paintings</h1>
+                        <p><input class="pink-text" type="button" value="Explore"></p>
                     </div>
-                    <img class="item__image" src="assets/abstract.png" alt="Abstract paintings">
+                    <img class="item__image" src="assets/images/abstract.png" alt="Abstract paintings">
                 </article>
-                <article class="projects__item"
-                    style="color: var(--color-khaki); border-top: 1px solid var(--color-khaki);">
+                <article class="projects__item top-line khaki-text">
                     <div class="item__text">
-                        <h4><ins>Design</ins></h4>
-                        <h1>Magazine study</h1>
-                        <h4><input type="button" value="Explore"
-                                style="color: inherit; border: 1px solid var(--color-khaki);">
-                        </h4>
+                        <h2 class="item__category">Design</h2>
+                        <h1 class="item__title">Magazine study</h1>
+                        <p><input class="khaki-text" type="button" value="Explore"></p>
                     </div>
-                    <img class="item__image" src="assets/magazine.png" alt="Magazine study">
+                    <img class="item__image" src="assets/images/magazine.png" alt="Magazine study">
                 </article>
-                <article class="projects__item"
-                    style=" color: var(--color-purple); border-top: 1px solid var(--color-purple);">
+                <article class="projects__item top-line purple-text">
                     <div class="item__text">
-                        <h4><ins>Photography</ins></h4>
-                        <h1>Echoes of Italy</h1>
-                        <h4><input type="button" value="Explore"
-                                style="color: inherit; border: 1px solid var(--color-purple);"></h4>
+                        <h2 class="item__category">Photography</h2>
+                        <h1 class="item__title">Echoes of Italy</h1>
+                        <p><input class="purple-text" type="button" value="Explore"></p>
                     </div>
-                    <img class="item__image" src="assets/echoes.png" alt="Echoes of Italy">
+                    <img class="item__image" src="assets/images/echoes.png" alt="Echoes of Italy">
                 </article>
-                <article class="projects__item"
-                    style="color: var(--color-blue);  border-top: 1px solid var(--color-blue);">
+                <article class="projects__item top-line blue-text">
                     <div class="item__text">
-                        <h4><ins>Design</ins></h4>
-                        <h1>Castro Capital branding</h1>
-                        <h4><input type="button" value="Explore"
-                                style="color: inherit; border: 1px solid var(--color-blue);">
-                        </h4>
+                        <h2 class="item__category">Design</h2>
+                        <h1 class="item__title">Castro Capital branding</h1>
+                        <p><input class="blue-text" type="button" value="Explore"></p>
                     </div>
-                    <img class="item__image" src="assets/castro.png" alt="Castro Capital branding">
+                    <img class="item__image" src="assets/images/castro.png" alt="Castro Capital branding">
                 </article>
             </section>
             <section>
                 <h1 class="skills-statement">I'm dedicated to crafting meaningful visual experiences through a
                     multidisciplinary design approach.
                 </h1>
-                <h4><input type="button" value="Discover my skills and passions"></h4>
+                <p><input type="button" value="Discover my skills and passions"></p>
             </section>
         </main>
 
         <footer>
-            <h1 style="border-top: 1px solid black;">
-                <ul class="social-links">
-                    <li><a href="mail@example.com" style="color: var(--color-pink);">Email</a></li>
-                    <li><a href="behance@example.com" style="color: var(--color-purple);">Behance</a></li>
-                    <li><a href="linkedin@example.com" style="color: var(--color-blue);">LinkedIn</a></li>
-                </ul>
-            </h1>
-            <h1>&#169 Sarah Chen 2025 All Rights Reserved</h1>
+            <div class="top-line">
+            <ul class="social-links">
+                <li><a class="pink-text" href="mailto:mail@example.com">Email</a></li>
+                <li><a class="purple-text" href="https://www.behance.net">Behance</a></li>
+                <li><a class="blue-text" href="https://www.linkedin.com">LinkedIn</a></li>
+            </ul>
+            </div>
+            <h1 class="footer-copyright">&#169 Sarah Chen 2025 All Rights Reserved</h1>
         </footer>
     </div>
 </body>

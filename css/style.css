@@ -1,0 +1,333 @@
+@font-face {
+    font-family: 'Source Serif 4';
+    src: url('../assets/fonts/SourceSerif4/static/SourceSerif4_36pt-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Source Serif 4';
+    src: url('../assets/fonts/SourceSerif4/static/SourceSerif4_36pt-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Source Serif 4';
+    src: url('../assets/fonts/SourceSerif4/static/SourceSerif4_36pt-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Source Serif 4';
+    src: url('../assets/fonts/SourceSerif4/static/SourceSerif4_36pt-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Source Serif 4';
+    src: url('../assets/fonts/SourceSerif4/static/SourceSerif4_36pt-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Source Serif 4';
+    src: url('../assets/fonts/SourceSerif4/static/SourceSerif4_36pt-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --font-main: "Source Serif 4", serif;
+    --font-secondary: "Source Code Pro", monospace;
+
+    --color-blue: #0034AD;
+    --color-pink: #AB0782;
+    --color-khaki: #6E660A;
+    --color-purple: #5F00AD;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    margin: 3.125rem auto;
+    padding-inline: 2rem;
+    width: 100%;
+    max-width: 80rem;
+}
+
+header {
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.65),
+            rgba(255, 255, 255, 0));
+
+    position: relative;
+    top: 0;
+    height: 80px;
+    width: 100%;
+    max-width: 80rem;
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: left;
+    gap: 1rem;
+}
+
+
+main {
+    margin-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile__name {
+    font-family: var(--font-main);
+}
+
+.links,
+.item__category,
+button,
+input[type="button"], .status__description, .linked-text {
+    font-family: var(--font-secondary);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 103%;
+    letter-spacing: -0.045em;
+}
+
+.item__title,
+.presentation-text,
+.skills-statement,
+.social-links,
+.footer-copyright {
+    font-family: var(--font-main);
+    font-style: normal;
+    font-weight: 300;
+    font-size: 3.4rem;
+    line-height: 120%;
+    letter-spacing: -0.045em;
+    margin: 20px 0;
+}
+
+.presentation-text {
+    margin-bottom: 40px;
+    margin-top: 8rem;
+}
+
+.skills-statement {
+    margin-bottom: 60px;
+    margin-top: 6rem;
+}
+
+
+.profile__name {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 152%;
+    letter-spacing: -0.045em;
+}
+
+
+
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    list-style: none;
+}
+
+.links a {
+    text-decoration: none;
+}
+
+.social-links a {
+    text-decoration: underline 2px;
+    text-underline-offset: 3px;
+}
+
+.social-links {
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 40px 0 150px 0;
+}
+
+article {
+    padding: 10px;
+    position: relative;
+    height: auto;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.projects__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+
+.item__image {
+
+    align-self: center;
+    width: 100%;
+    max-width: 557.33px;
+    height: auto;
+    border-radius: 8px;
+    padding-top: 50px;
+
+    transition: 1s ease;
+}
+
+.item__image:hover {
+    transform: scale(1.02);
+    opacity: 0.7;
+}
+
+.item__category {
+    text-decoration: underline;
+}
+
+button,
+input[type="button"] {
+    background-color: transparent;
+    transition: transform 0.2s cubic-bezier(0.34, 2, 0.64, 1), text 0.5s ease;
+    padding: 5px 10px;
+    border: 1.5px solid currentColor;
+}
+
+button:hover,
+input[type="button"]:hover {
+    transform: scale(1.05);
+    background-color: black;
+    color: white;
+}
+
+.top-line {
+    border-top: 1px solid currentColor;
+}
+
+.blue-text {
+    color: var(--color-blue);
+}
+
+.pink-text {
+    color: var(--color-pink);
+}
+
+.purple-text {
+    color: var(--color-purple);
+}
+
+.khaki-text {
+    color: var(--color-khaki);
+}
+
+
+@media (min-width: 768px) {
+    .container {
+        margin: 4rem auto;
+        margin-top: 2rem;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    header {
+        position: sticky;
+    }
+
+
+    .projects__item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 50px;
+    }
+
+    .profile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .item__text {
+        padding-right: 2rem;
+    }
+
+    .item__image {
+        width: 565px;
+        padding-top: 0px;
+        align-self: flex-end;
+    }
+
+    /*Animations*/
+    .profile__image-container {
+        transform-origin: 50% 40%;
+        animation: rotar linear;
+        animation-timeline: scroll();
+
+    }
+
+    @keyframes rotar {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .profile__image {
+        transition: transform 0.2s cubic-bezier(0.34, 2, 0.64, 1);
+        /* efecto muelle/rebote */
+    }
+
+    .profile__image:hover {
+        transform: rotate(-30deg);
+    }
+
+    /*IMPORTANTE EN GENERAL
+            decidir si cambiar algún h1,2 o 3
+            y estilizarlos por clases, acabado??
+            añadir márgenes restantes (altos) como en social links o arriba
+
+            intentar quitar elementos generales para estilo: listas, etc.
+
+            optimizar los colores, separar style en otro archivo y linkearlo
+            */
+}
