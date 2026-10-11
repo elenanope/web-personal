@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Echoes of Italy</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .linked-text {
+            color: rgb(56, 47, 47);
+            line-height: 8rem;
+        }
+
+        .skills-statement {
+            margin-top: 2rem;
+            margin-bottom: 0;
+        }
+
+        .item__text {
+            padding: 3rem 0;
+            max-width: 20rem;
+        }
+
+        .item__text--long {
+            padding: 3rem 0;
+            width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .articles-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .article__item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item__subtitle {
+            font-family: var(--font-main);
+            font-style: normal;
+            font-weight: 300;
+            font-size: 1rem;
+            line-height: 103%;
+            letter-spacing: -0.045em;
+        }
+
+        .item__image--bigger {
+            max-width: 100%;
+            height: auto;
+            padding-top: 50px;
+
+            transition: 1s ease;
+        }
+
+        .item__image--bigger:hover {
+            transform: scale(1.02);
+            opacity: 0.7;
+        }
+
+        .item__image--smaller {
+
+            align-self: center;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            padding-top: 50px;
+
+            transition: 1s ease;
+        }
+
+        .item__image--smaller:hover {
+            transform: scale(1.02);
+            opacity: 0.7;
+        }
+
+        .photo-block {
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+            max-width: 100%;
+            gap: 0.75rem;
+            margin-block: 3rem 5rem;
+        }
+
+        .photo-block img {
+            display: block;
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .photo-block img:hover {
+            transform: scale(1.02);
+            opacity: 0.7;
+        }
+
+        .photo-block--left {
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .photo-block--center {
+            margin-inline: auto;
+        }
+
+        .photo-block--right {
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .left-text {
+            width: 100%;
+        }
+
+        .center-text {
+            align-self: center;
+        }
+
+        @media(min-width: 768px) {
+
+            .item__image--smaller {
+                width: 361.33px;
+            }
+
+            .article__item {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .linked-text {
+                text-decoration: none;
+            }
+        }
+        @media (min-width: 1200px) {
+                .articles-grid {
+                    flex-direction: row;
+                }
+
+                .article__item {
+                    flex-direction: column;
+                }
+            }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <section class="profile">
+                <div class="profile__image-container">
+                    <img class="profile__image" src="assets/images/sarah-chen.png" alt="Sarah Chen" width="50"
+                        height="50">
+                </div>
+                <h1 class="profile__name">Sarah Chen</h1>
+            </section>
+            <nav>
+                <ul class="links">
+                    <li><a href="index.html" class="pink-text">Home</a></li>
+                    <li><a href="about.html" class="khaki-text">About</a></li>
+                    <li><a href="mailto:email@ejemplo.com" class="purple-text">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="photography-section">
+                <div class="item__text--long">
+                    <div class="purple-text">
+                        <h3 class="item__category">Photography</h3>
+                        <h1 class="item__title">Echoes of Italy</h1>
+                    </div>
+                    <div class="item__title">'Echoes of Italy' is my lens on the country’s timeless charm — candid
+                        moments, architectural details, and sun-kissed scenes. </div>
+                </div>
+                <div class="photo-block photo-block--center">
+                    <img class="item__image--bigger" src="assets/images/wandering.png" alt="Wandering Man">
+                    <p class="center-text item__subtitle">Wandering and wondering, lost in the rhythm of the city.</p>
+                </div>
+                <div class="photo-block photo-block--left">
+                    <img class="item__image--bigger" src="assets/images/architecture.png" alt="Architecture Photo">
+                    <p class="left-text item__subtitle">A symphony of motion and architecture, framed by history.</p>
+                </div>
+                <div class="photo-block photo-block--right">
+                    <img class="item__image--bigger" src="assets/images/basketball.png" alt="Contrast Basketball Study">
+                    <p class="left-text item__subtitle">A study in contrasts: light, shadow, and the rhythm of the game.
+                    </p>
+                </div>
+
+                <div class="item__title">From sun-drenched piazzas to intimate still-lives, I aimed to capture the soul
+                    of the country through light and composition.</div>
+
+                <div class="photo-block photo-block--center">
+                    <img class="item__image--bigger" src="assets/images/photographer.png" alt="Photographer Man">
+                    <p class="left-text item__subtitle">Dockside perspective, capturing the soul of the water.</p>
+                </div>
+                <div class="photo-block photo-block--center">
+                    <img class="item__image--bigger" src="assets/images/venice.png" alt="Venice Couple">
+                    <p class="left-text item__subtitle">Venice, and a moment between two.</p>
+                </div>
+                <div class="photo-block photo-block--center">
+                    <img class="item__image--bigger" src="assets/images/rhythm.png" alt="Spontaneous Rhythm">
+                    <p class="left-text item__subtitle">A spontaneous rhythm, a shared moment, pure joy.</p>
+                </div>
+            </section>
+
+
+            <section class="top-line">
+                <div class="skills-statement">
+                    From graphic design to interior spaces, see the breadth of my creative explorations.
+                </div>
+                <a class="linked-text" href="project.html">More projects</a>
+            </section>
+            <section class="articles-grid">
+                <article class="article__item top-line pink-text">
+                    <div class="item__text">
+                        <h3 class="item__category">Artwork</h3>
+                        <h2 class="item__title">Illustration sketches</h2>
+                        <a href="project.html" class="project-link pink-text">Explore</a>
+                    </div>
+                    <img class="item__image--smaller" src="assets/images/abstract.png" alt="Abstract paintings">
+                </article>
+                <article class="article__item top-line khaki-text">
+                    <div class="item__text">
+                        <h3 class="item__category">Design</h3>
+                        <h2 class="item__title">Magazine study</h2>
+                        <a href="project.html" class="project-link khaki-text">Explore</a>
+                    </div>
+                    <img class="item__image--smaller" src="assets/images/magazine.png" alt="Magazine study">
+                </article>
+                <article class="article__item top-line blue-text">
+                    <div class="item__text">
+                        <h3 class="item__category">Design</h3>
+                        <h2 class="item__title">Castro Capital branding</h2>
+                        <a href="project.html" class="project-link blue-text">Explore</a>
+                    </div>
+                    <img class="item__image--smaller" src="assets/images/castro.png" alt="Castro Capital branding">
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            <div class="top-line">
+                <ul class="social-links">
+                    <li><a class="pink-text" href="mailto:email@ejemplo.com">Email</a></li>
+                    <li><a class="purple-text" href="https://www.behance.net">Behance</a></li>
+                    <li><a class="blue-text" href="https://www.linkedin.com">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="footer-copyright">&#169; Sarah Chen 2025 All Rights Reserved</div>
+        </footer>
+    </div>
+</body>
+
+</html>
